@@ -9,19 +9,19 @@
         </p>
         <CustomRadioTileGroup
             v-model="insuranceData.baseInsurance"
-            :values="insuranceOptions"
+            :values="insurances"
             input-label="Basisverzekering"
             name="radio-insurance"
         />
         <CustomDropdownInput
             v-model="insuranceData.paymentTerm"
             input-label="Kies je betaaltermijn"
-            :values="paymentOptions"
+            :values="paymentFrequencies"
         />
         <CustomDropdownInput
             v-model="insuranceData.risk"
             input-label="Kies de hoogte van het eigen risico"
-            :values="riskOptions"
+            :values="insuranceRisks"
         />
     </div>
     <div class="form-group">
@@ -34,14 +34,14 @@
         <CustomDropdownInput
             v-model="insuranceData.additionalInsurance"
             input-label="Kies uw aanvullende verzekering"
-            :values="additionalInsuranceOptions"
+            :values="additionalInsurances"
         />
     </div>
     <div class="form-group">
         <CustomDropdownInput
             v-model="insuranceData.dentalInsurance"
             input-label="Kies uw tandartsverzekering"
-            :values="dentistInsuranceOptions"
+            :values="dentalInsurances"
         />
     </div>
 </template>
@@ -59,10 +59,4 @@ import {
 } from '@/constants/insuranceOptions';
 
 const { insuranceData } = storeToRefs(useInsuranceDataStore());
-
-const insuranceOptions = insurances;
-const paymentOptions = paymentFrequencies;
-const riskOptions = insuranceRisks;
-const additionalInsuranceOptions = additionalInsurances;
-const dentistInsuranceOptions = dentalInsurances;
 </script>
