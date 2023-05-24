@@ -1,10 +1,10 @@
 import { it, describe, expect } from 'vitest';
 import { shallowMount } from '@vue/test-utils';
-import App from './App.vue';
+import registerPage from './register-page.vue';
 
 describe('App.vue', () => {
     it('Should render correctly', () => {
-        const wrapper = shallowMount(App);
+        const wrapper = shallowMount(registerPage);
 
         expect(wrapper.element).toMatchSnapshot();
     });
